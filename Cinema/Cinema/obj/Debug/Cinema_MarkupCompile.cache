@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\Demo\Test2\Cinema\Cinema\obj\Debug\
+C:\Demo1\TestFinal\Cinema\Cinema\obj\Debug\
 Cinema
 none
 false
 DEBUG;TRACE
-F:\Demo\Test2\Cinema\Cinema\App.xaml
-2161737354
-4-1312754814
-16-1509019440
-181825008860
-MainWindow.xaml;Menu.xaml;
+C:\Demo1\TestFinal\Cinema\Cinema\App.xaml
+41315468409
+4154089447
+18-1541380699
+18-315876675
+MainWindow.xaml;Menu.xaml;PagePhim.xaml;WindowThemPhim.xaml;
 
 False
 

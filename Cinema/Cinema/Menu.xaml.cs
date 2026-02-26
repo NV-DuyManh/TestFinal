@@ -14,7 +14,8 @@ namespace Cinema
         // Quản lý phim
         private void BtnPhim_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý phim đang được xây dựng!", "Thông báo");
+            // Hiển thị PagePhim vào trong cái khung MainFrame
+            MainFrame.Content = new PagePhim();
         }
 
         // Quản lý sản phẩm
