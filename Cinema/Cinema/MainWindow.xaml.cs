@@ -75,5 +75,11 @@ namespace Cinema
                 MessageBox.Show("Lỗi kết nối Cơ sở dữ liệu: \n" + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DangKi reg = new DangKi();
+            reg.ShowDialog(); // Mở cửa sổ đăng ký dạng hội thoại
+        }
+
     }
 }
