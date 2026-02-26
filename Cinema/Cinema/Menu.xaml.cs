@@ -11,28 +11,30 @@ namespace Cinema
             InitializeComponent();
         }
 
-        // Quản lý phim
+        // 1. Quản lý phim
         private void BtnPhim_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý phim đang được xây dựng!", "Thông báo");
+            MessageBox.Show("Chức năng Quản lý phim đang xây dựng!");
         }
 
-        // Quản lý sản phẩm
+        // 2. Quản lý sản phẩm (ĐÃ SỬA)
         private void BtnSanPham_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý sản phẩm đang được xây dựng!", "Thông báo");
+            // Thay vì .Show(), ta điều hướng Frame tới trang qlsp
+            // Lưu ý: Nếu qlsp là Window, bạn phải đổi nó thành Page mới dùng cách này được
+            MainFrame.Navigate(new qlsp());
         }
 
-        // Quản lý suất chiếu
+        // 3. Quản lý suất chiếu
         private void BtnSuatChieu_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý suất chiếu đang được xây dựng!", "Thông báo");
+            MessageBox.Show("Chức năng Quản lý suất chiếu đang xây dựng!");
         }
 
-        // ✅ THÊM CÁI NÀY
+        // 4. Quản lý tài khoản
         private void BtnTaiKhoan_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Chức năng Quản lý tài khoản đang được xây dựng!", "Thông báo");
+            MessageBox.Show("Chức năng Quản lý tài khoản đang xây dựng!");
         }
     }
 }

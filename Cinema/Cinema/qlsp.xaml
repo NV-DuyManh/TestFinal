@@ -1,0 +1,71 @@
+﻿<Page x:Class="Cinema.qlsp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cinema"
+        mc:Ignorable="d"
+        Title="Quản lý sản phẩm bắp nước - Cinema" Height="600" Width="950">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Padding="0,0,10,0">
+            <StackPanel>
+                <TextBlock Text="QUẢN LÝ BẮP NƯỚC" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+                <GroupBox Header="1. Thông tin sản phẩm" Padding="10" Margin="0,0,0,10">
+                    <StackPanel>
+                        <TextBlock Text="Mã sản phẩm:" Margin="0,0,0,2"/>
+                        <TextBox x:Name="txtId" IsReadOnly="True" Background="#F5F5F5" Padding="4" Margin="0,0,0,8"/>
+
+                        <TextBlock Text="Tên mặt hàng:" Margin="0,0,0,2"/>
+                        <TextBox x:Name="txtName" Padding="4" Margin="0,0,0,8"/>
+
+                        <TextBlock Text="Giá bán (VNĐ):" Margin="0,0,0,2"/>
+                        <TextBox x:Name="txtPrice" Padding="4" Margin="0,0,0,8"/>
+
+                        <TextBlock Text="Phân loại:" Margin="0,0,0,2"/>
+                        <ComboBox x:Name="cmbCategory" Padding="4">
+                            <ComboBoxItem Content="Bắp rang" IsSelected="True"/>
+                            <ComboBoxItem Content="Nước ngọt"/>
+                            <ComboBoxItem Content="Combo"/>
+                            <ComboBoxItem Content="Snack khác"/>
+                        </ComboBox>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="2. Bảng điều khiển" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Tạo món mới:" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                        <UniformGrid Columns="2" Margin="0,0,0,10">
+                            <Button x:Name="btnAdd" Content="➕ Thêm Mới" Height="35" Margin="2" Click="btnAdd_Click"/>
+                            <Button x:Name="btnClear" Content="🔄 Nhập Lại" Height="35" Margin="2" Click="btnClear_Click"/>
+                        </UniformGrid>
+
+                        <TextBlock Text="Sửa / Xóa (Chọn trên bảng):" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                        <UniformGrid Columns="2">
+                            <Button x:Name="btnEdit" Content="✏️ Cập Nhật" Height="35" Margin="2" Click="btnEdit_Click"/>
+                            <Button x:Name="btnDelete" Content="🗑️ Xóa Bỏ" Height="35" Margin="2" Click="btnDelete_Click"/>
+                        </UniformGrid>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <GroupBox Grid.Column="1" Header="Danh sách sản phẩm hiện có" Padding="5">
+            <DataGrid x:Name="dgProducts" AutoGenerateColumns="False" CanUserAddRows="False" 
+                      SelectionMode="Single" SelectionChanged="dgProducts_SelectionChanged"
+                      AlternatingRowBackground="#F9F9F9" GridLinesVisibility="Horizontal" RowHeight="30">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tên Sản Phẩm" Binding="{Binding ten_san_pham}" Width="*"/>
+                    <DataGridTextColumn Header="Giá Tiền" Binding="{Binding gia_ban, StringFormat={}{0:N0} VNĐ}" Width="120"/>
+                    <DataGridTextColumn Header="Loại" Binding="{Binding loai}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</Page>
